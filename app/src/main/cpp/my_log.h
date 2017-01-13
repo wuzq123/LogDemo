@@ -31,50 +31,50 @@
 
 
 #if MY_LOG_LEVEL_VERBOSE >= MY_LOG_LEVEL
-#define MY_LOG_VERBOSE(fmt, ...)  MY_LOG_PRINT(ANDROID_LOG_VERBOSE, fmt, ##__VA_ARGS__)
+#define LOGV(fmt, ...)  MY_LOG_PRINT(ANDROID_LOG_VERBOSE, fmt, ##__VA_ARGS__)
 #else
-#define MY_LOG_VERBOSE(...) MY_LOG_NOOP
+#define LOGV(...) MY_LOG_NOOP
 #endif
 
 #if MY_LOG_LEVEL_DEBUG >= MY_LOG_LEVEL
-#define MY_LOG_DEBUG(fmt, ...)  MY_LOG_PRINT(ANDROID_LOG_DEBUG, fmt, ##__VA_ARGS__)
+#define LOGD(fmt, ...)  MY_LOG_PRINT(ANDROID_LOG_DEBUG, fmt, ##__VA_ARGS__)
 #else
-#define MY_LOG_DEBUG(...) MY_LOG_NOOP
+#define LOGD(...) MY_LOG_NOOP
 #endif
 
 
 #if MY_LOG_LEVEL_INFO >= MY_LOG_LEVEL
-#define MY_LOG_INFO(fmt, ...)  MY_LOG_PRINT(ANDROID_LOG_INFO, fmt, ##__VA_ARGS__)
+#define LOGI(fmt, ...)  MY_LOG_PRINT(ANDROID_LOG_INFO, fmt, ##__VA_ARGS__)
 #else
-#define MY_LOG_INFO(...) MY_LOG_NOOP
+#define LOGI(...) MY_LOG_NOOP
 #endif
 
 
 #if MY_LOG_LEVEL_WARNING >= MY_LOG_LEVEL
-#define MY_LOG_WARNING(fmt, ...)  MY_LOG_PRINT(ANDROID_LOG_WARN, fmt, ##__VA_ARGS__)
+#define LOGW(fmt, ...)  MY_LOG_PRINT(ANDROID_LOG_WARN, fmt, ##__VA_ARGS__)
 #else
-#define MY_LOG_WARNING(...) MY_LOG_NOOP
+#define LOGW(...) MY_LOG_NOOP
 #endif
 
 
 
 #if MY_LOG_LEVEL_ERROR >= MY_LOG_LEVEL
-#define MY_LOG_ERROR(fmt, ...)  MY_LOG_PRINT(ANDROID_LOG_ERROR, fmt, ##__VA_ARGS__)
+#define LOGE(fmt, ...)  MY_LOG_PRINT(ANDROID_LOG_ERROR, fmt, ##__VA_ARGS__)
 #else
-#define MY_LOG_ERROR(...) MY_LOG_NOOP
+#define LOGE(...) MY_LOG_NOOP
 #endif
 
 
 
 #if MY_LOG_LEVEL_FATAL >= MY_LOG_LEVEL
-#define MY_LOG_FATAL(fmt, ...)  MY_LOG_PRINT(ANDROID_LOG_FATAL, fmt, ##__VA_ARGS__)
+#define LOGF(fmt, ...)  MY_LOG_PRINT(ANDROID_LOG_FATAL, fmt, ##__VA_ARGS__)
 #else
-#define MY_LOG_FATAL(...) MY_LOG_NOOP
+#define LOGF(...) MY_LOG_NOOP
 #endif
 
 
 #if MY_LOG_LEVEL_SILENT >= MY_LOG_LEVEL
-#define MY_LOG_ASSERT(expression, fmt, ...) if(!(expression)) __android_log_assert(#expression, MY_LOG_TAG, fmt, ##__VA_ARGS__);
+#define LOGA(expression, fmt, ...) if(!(expression)) __android_log_assert(#expression, MY_LOG_TAG, fmt, ##__VA_ARGS__);
 #else
-#define MY_LOG_ASSERT(...) MY_LOG_NOOP
+#define LOGA(...) MY_LOG_NOOP
 #endif
